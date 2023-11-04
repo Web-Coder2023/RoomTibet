@@ -1,0 +1,46 @@
+.btn {
+    display: flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #1A3E3E;
+    position: relative;
+    overflow: hidden;
+
+    color: #FDFDFD;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.192px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 45px;
+        transform: skewX(-45deg); // Наклон
+        animation: flareAnimation;
+        left: -150%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+        animation: flareAnimation 3s infinite linear; // Время и тип анимации можно менять
+    }
+
+    &:hover {
+        border: 1px solid #1A3E3E;
+        background: #FDFDFD;
+        animation: none;
+        color: #1A3E3E;
+    }
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}

@@ -1,0 +1,17 @@
+.first-screen {
+    background: url('../images/first-screen-bg.webp') top center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 800px;
+}
+@media (max-width: 990px) {
+    .first-screen{
+        min-height: 700px;
+    }
+}
+@media (max-width: 600px) {
+    .first-screen{
+        min-height: 600px;
+    }
+}

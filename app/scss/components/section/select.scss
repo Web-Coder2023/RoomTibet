@@ -1,0 +1,179 @@
+.form {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.20);
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    backdrop-filter: blur(3px);
+    padding: 40px 43px;
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #fdfdfd;
+        border-radius: 4px;
+        padding: 0;
+        width: 213px;
+        height: 52px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: .192px;
+        color: #1a3e3e;
+        background: #fdfdfd;
+        transition: all .3s;
+
+        &:hover {
+            border: 1px solid #fff;
+            background: #1A3E3E;
+            animation: none;
+            color: #fff;
+        }
+    }
+}
+
+.select-form {
+    display: block;
+    width: 270px;
+    color: #FDFDFD;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__header {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        flex: 0;
+        height: 52px;
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    &__current {
+        padding: 8px;
+        font-size: 18px;
+        line-height: 24px;
+        display: inline-block;
+    }
+
+    &__list {
+        display: block;
+        transition: all 0.3s ease-in-out;
+        left: 0;
+        position: absolute;
+        border-top: 0;
+        border-radius: 10px;
+        z-index: 5;
+        width: 100%;
+        top: 100%;
+        background: #fdfdfd;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+        // overflow-y: auto; Если много пунктов
+
+        &-item {
+            line-height: 24px;
+            padding: 8px;
+            font-size: 17px;
+            color: #1A3E3E;
+
+            cursor: pointer;
+
+            &:hover {
+                color: #FDFDFD;
+                background-color: #1a3e3e;
+            }
+        }
+    }
+
+    &__label {
+        margin-left: 8px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
+
+.date {
+    display: flex;
+    border: 1px solid #e1e3e4;
+    border-radius: 8px;
+
+    &__input {
+        flex: 1;
+        border: 0;
+        padding: 0 8px;
+        height: 52px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: #fdfdfd;
+        background-color: rgba(0, 0, 0, 0);
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(1)
+        }
+
+        &::-moz-placeholder {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            color: #fdfdfd
+        }
+
+        &::placeholder {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            color: #fdfdfd
+        }
+    }
+}
+
+.is-active {
+    .select-form__list {
+        border: 1px solid #ddd;
+        border-top: none;
+    }
+}
+
+@media (max-width: 1150px){
+    .form{
+        flex-wrap: wrap;
+    }
+    .select-form{
+        flex: 1 1 48%;
+        &__btn{
+            margin-left: auto;
+        }
+    }
+}
+@media (max-width: 600px){
+    .form{
+        background: unset;
+        backdrop-filter: unset;
+        padding: unset;
+    }
+    .select-form{
+        display: none;
+    }
+}
