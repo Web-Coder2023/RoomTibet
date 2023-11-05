@@ -1,15 +1,18 @@
-.wrapper{
+.wrapper {
 	min-height: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 }
-main{
+
+main {
 	flex: 1 1 auto;
 }
-._ibg{
+
+._ibg {
 	position: relative;
-	img{
+
+	img {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -18,10 +21,11 @@ main{
 		object-fit: cover;
 	}
 }
-._img{
-	img{
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+
+._img {
+	img {
+		height: auto;
+		max-width: 100%;
+		object-fit: cover
 	}
 }
